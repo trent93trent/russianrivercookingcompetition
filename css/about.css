@@ -31,11 +31,10 @@ body {
     text-align: center;
     padding: 4rem 2rem;
     margin-bottom: 2rem;
-    background: linear-gradient(rgba(44, 26, 29, 0.8), rgba(44, 26, 29, 0.8)), 
-                url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-    background-size: cover;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--light-bg);
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .about-hero h1 {
@@ -43,12 +42,14 @@ body {
     font-size: 2.8rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .about-hero .tagline {
     font-family: var(--script-font);
     font-size: 1.5rem;
     margin-top: 0;
+    color: var(--secondary-color);
 }
 
 /* Content Sections */
