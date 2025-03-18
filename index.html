@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian River Cooking Competition 2025</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Caveat&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/header-component.js" defer></script>
+    <style>
+        /* Featured Chefs Section Styles */
+        .featured-section {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #8B2323;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #DAA520;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .featured-chefs {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: nowrap;
+        }
+
+        .featured-chef {
+            width: 220px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .featured-chef:first-child {
+            border: 3px solid #DAA520;
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.2);
+        }
+
+        .featured-chef:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-chef:first-child:hover {
+            box-shadow: 0 15px 30px rgba(218, 165, 32, 0.3);
+        }
+
+        .chef-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-chef:hover .chef-image {
+            transform: scale(1.05);
+        }
+
+        .chef-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .chef-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #8B2323;
+            margin-bottom: 0.5rem;
+        }
+
+        .chef-title {
+            color: #556B2F;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+
+        .chef-cuisine {
+            display: inline-block;
+            background-color: #DAA520;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        .chef-status {
+            display: block;
+            color: #8B2323;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .featured-chef:first-child .chef-status {
+            color: #DAA520;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #8B2323;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a1e1e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 35, 35, 0.2);
+        }
+
+        @media (max-width: 992px) {
+            .featured-chefs {
+                gap: 1rem;
+            }
+            
+            .featured-chef {
+                width: 200px;
+            }
+            
+            .chef-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-chefs {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+            
+            .featured-chef {
+                width: 45%;
+                max-width: 200px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .featured-chefs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .featured-chef {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* About Section Icon Styles */
+        .about-icon {
+            font-size: 2.5rem;
+            color: #8B2323;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover .about-icon {
+            transform: scale(1.1);
+        }
+
+        .years-dish-section {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+
+        .years-dish-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .years-dish-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .years-dish-text {
+            padding: 2rem;
+        }
+
+        .years-dish-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .years-dish-content {
+                grid-template-columns: 1fr;
+            }
+
+            .years-dish-image img {
+                height: 300px;
+            }
+        }
+
+        .highlight-word {
+            font-size: 3.5rem;
+            color: #DAA520;
+            font-family: 'Playfair Display', serif;
+            display: block;
+            line-height: 1;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Global Header Component -->
+    <header-component></header-component>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Russian River Cooking Competition</h1>
+            <p class="hero-tagline">Where Culinary Excellence Meets Wine Country</p>
+            <div class="hero-cta">
+                <p class="hero-date">2025 • March 28-30 • Healdsburg, California</p>
+                <a href="#about" class="cta-button">Discover More</a>
+            </div>
+        </div>
+        <div class="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active" style="background-image: url('images/backgrounds/russianriver.jpg')"></div>
+                <div class="carousel-slide" style="background-image: url('images/backgrounds/cooking1.jpg')"></div>
+                <div class="carousel-slide" style="background-image: url('images/backgrounds/cooking2.jpg')"></div>
+                <div class="carousel-slide" style="background-image: url('images/backgrounds/winery.jpg')"></div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Premier Culinary Event in Wine Country</h2>
+                <p>Join us for three days of extraordinary culinary competition in the heart of Sonoma County</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>4 Elite Chefs</h3>
+                    <p>Competing from across the Bay Area</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-wine-glass"></i></div>
+                    <h3>Wine Pairings</h3>
+                    <p>Featuring the finest Russian River Valley vintages</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-award"></i></div>
+                    <h3>Culinary Excellence Award</h3>
+                    <p>The most prestigious culinary honor in Northern California</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Local Ingredients</h3>
+                    <p>Showcasing Sonoma County's agricultural bounty</p>
+                </div>
+            </div>
+            <div class="about-cta">
+                <a href="pages/about.html" class="secondary-button">Learn More About RRCC</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Highlights -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Competition Highlights</h2>
+                <p>A culinary showdown featuring creativity, technique, and presentation</p>
+            </div>
+            <div class="highlights-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Signature Dish Challenge</h3>
+                        <p>All four chefs prepare the same signature dish - each bringing their unique style, technique, and creative interpretation to a common canvas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Full Day of Cooking</h3>
+                        <p>Watch as our four elite chefs work from sunrise to sunset, managing their time and resources while showcasing their culinary expertise in a high-pressure environment.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Judging Rounds</h3>
+                        <p>Dishes are evaluated based on four key criteria: taste, presentation, creativity, and technique. Every attendee at the competition participates in scoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Chefs -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Talented Chefs for 2025</h2>
+            <p class="section-description">Get to know the culinary artists competing in this year's Russian River Cooking Competition.</p>
+            
+            <div class="featured-chefs">
+                <div class="featured-chef">
+                    <img src="images/chefs/justin.jpg" alt="Chef Justin Shauf" class="chef-image">
+                    <div class="chef-info">
+                        <h3>Chef Justin Shauf</h3>
+                        <p class="chef-cuisine">Sea-to-Table</p>
+                        <p class="chef-status">Reigning Champion</p>
+                    </div>
+                </div>
+                <div class="featured-chef">
+                    <img src="images/chefs/marco.jpg" alt="Chef Marco Valencia" class="chef-image">
+                    <div class="chef-info">
+                        <h3>Chef Marco Valencia</h3>
+                        <p class="chef-cuisine">Bold Flavors</p>
+                        <p class="chef-status">2024 Runner-Up</p>
+                    </div>
+                </div>
+                <div class="featured-chef">
+                    <img src="images/chefs/jun.jpg" alt="Chef Moriah DeGuzman" class="chef-image">
+                    <div class="chef-info">
+                        <h3>Chef Moriah DeGuzman</h3>
+                        <p class="chef-cuisine">Homestyle</p>
+                    </div>
+                </div>
+                <div class="featured-chef">
+                    <img src="images/chefs/david.jpg" alt="Chef David Garcia" class="chef-image">
+                    <div class="chef-info">
+                        <h3>Chef David Garcia</h3>
+                        <p class="chef-cuisine">Fancy Fusion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- This Year's Dish Section -->
+    <section class="years-dish-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>This Year's Dish: <span class="highlight-word">Curry</span></h2>
+                <p>Celebrating the rich and diverse world of curry making</p>
+            </div>
+            <div class="years-dish-content">
+                <div class="years-dish-image">
+                    <img src="images/backgrounds/curry.jpg" alt="Curry Competition 2025">
+                </div>
+                <div class="years-dish-text">
+                    <p>Curry, derived from the Tamil word 'kari' meaning 'sauce' or 'relish,' has evolved into a global culinary phenomenon. This complex blend of spices and ingredients has been perfected over thousands of years, with its roots tracing back to ancient India. Today, curry represents a diverse family of dishes that showcase the rich tapestry of Asian, Caribbean, and African culinary traditions, each bringing unique interpretations and techniques to this beloved dish.</p>
+                    <a href="competition.html" class="btn-primary">Learn More About This Year's Competition</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>RRCC<span>2025</span></h2>
+                    <p>The Russian River Cooking Competition is a celebration of culinary artistry and the rich agricultural heritage of Sonoma County.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/rrcc2024.html">Previous Competition</a></li>
+                        <li><a href="pages/support.html">Support Us</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Russian River Culinary Center<br>123 Vineyard Lane<br>Healdsburg, CA 95448</p>
+                    <p>Email: <a href="mailto:info@rrcc2025.com">info@rrcc2025.com</a></p>
+                    <p>Phone: (707) 555-0123</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">IG</a>
+                        <a href="#" class="social-icon">TW</a>
+                        <a href="#" class="social-icon">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Russian River Cooking Competition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/landing.js"></script>
+</body>
+</html> 

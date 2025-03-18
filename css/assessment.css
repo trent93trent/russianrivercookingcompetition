@@ -1,0 +1,452 @@
+/* Assessment Page Styles - Matching the main project style */
+:root {
+    --primary-color: #8B2323; /* Rich burgundy (wine country) */
+    --secondary-color: #556B2F; /* Olive green (fresh ingredients) */
+    --accent-color: #CD853F; /* Warm terracotta (cooking vessels) */
+    --background-color: #F5F5F5; /* Crisp white/off-white */
+    --text-color: #2c3e50;
+    --gold-color: #DAA520; /* Award accent color */
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-top: 4rem; /* Account for fixed header */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--gold-color);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1.5rem;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--primary-color);
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Message */
+.welcome-message {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Chef Selection */
+.chef-selection {
+    margin-bottom: 3rem;
+}
+
+.selected-chef-status {
+    background-color: rgba(139, 35, 35, 0.1);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.selected-chef-status.active {
+    background-color: rgba(218, 165, 32, 0.15);
+    color: var(--primary-color);
+    border-left: 4px solid var(--gold-color);
+}
+
+.chef-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem auto;
+}
+
+.chef-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+}
+
+.chef-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.chef-card.selected {
+    border-color: var(--gold-color);
+    background-color: rgba(218, 165, 32, 0.05);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(218, 165, 32, 0.15);
+}
+
+.chef-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.chef-card:hover img {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.chef-card.selected img {
+    border-color: var(--gold-color);
+}
+
+.chef-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+/* Scoring Section */
+.scoring-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+}
+
+.criteria-group {
+    background-color: rgba(245, 245, 245, 0.5);
+    padding: 1.8rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.rating-scale-desc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.rating-container {
+    margin-bottom: 1.5rem;
+}
+
+.rating-boxes {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rating-box {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--secondary-color);
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.rating-box:hover {
+    background-color: rgba(85, 107, 47, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.rating-box.selected {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(85, 107, 47, 0.2);
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(85, 107, 47, 0.1);
+}
+
+/* Golden Spoon Section */
+.golden-spoon-section {
+    background-color: rgba(218, 165, 32, 0.1);
+    border-left: 4px solid var(--gold-color);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--gold-color);
+}
+
+.checkbox-container label {
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Final Score */
+.final-score {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    margin: 2.5rem 0;
+    box-shadow: 0 10px 20px rgba(139, 35, 35, 0.15);
+}
+
+.final-score h2 {
+    color: white;
+    margin: 0;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+}
+
+.submit-btn:hover {
+    background-color: #7a1e1e;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 35, 35, 0.2);
+}
+
+/* Popup Styles */
+.chef-selection-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.popup-chef-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.popup-chef-card {
+    background: white;
+    border: 2px solid #e1e1e1;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.popup-chef-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.popup-chef-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.popup-chef-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .chef-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .popup-chef-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rating-boxes {
+        justify-content: flex-start;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rating-box {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .criteria-group {
+        padding: 1.2rem;
+    }
+} 

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Curry Competition - Russian River Cooking Competition</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Caveat&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/header-component.js" defer></script>
+    <style>
+        .competition-hero {
+            background-image: url('images/backgrounds/curry.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .competition-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .competition-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .competition-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .competition-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .competition-details {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .competition-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .competition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .competition-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .competition-card h3 {
+            color: #8B2323;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .competition-card i {
+            font-size: 2rem;
+            color: #DAA520;
+            margin-bottom: 1rem;
+        }
+
+        .judging-criteria {
+            background-color: white;
+            padding: 5rem 0;
+        }
+
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .criteria-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .criteria-list li::before {
+            content: '•';
+            color: #DAA520;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .competition-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .curry-background {
+            background-color: #f9f9f9;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .curry-background p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header-component></header-component>
+
+    <section class="competition-hero">
+        <div class="competition-hero-content">
+            <h1>2025 Curry Competition</h1>
+            <p>Celebrating the Art of Curry Making</p>
+        </div>
+    </section>
+
+    <section class="curry-background">
+        <div class="competition-container">
+            <p>Curry, derived from the Tamil word 'kari' meaning 'sauce' or 'relish,' has evolved into a global culinary phenomenon. This complex blend of spices and ingredients has been perfected over thousands of years, with its roots tracing back to ancient India. Today, curry represents a diverse family of dishes that showcase the rich tapestry of Asian, Caribbean, and African culinary traditions, each bringing unique interpretations and techniques to this beloved dish.</p>
+        </div>
+    </section>
+
+    <section class="competition-details">
+        <div class="competition-container">
+            <h2>About This Year's Competition</h2>
+            <p>This year, we're celebrating the rich and diverse world of curry. Our chefs will showcase their expertise in creating exceptional curry dishes that blend traditional techniques with innovative approaches.</p>
+            
+            <div class="competition-grid">
+                <div class="competition-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Competition Schedule</h3>
+                    <p>March 28-30, 2025</p>
+                    <p>Healdsburg, California</p>
+                </div>
+                <div class="competition-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Prizes</h3>
+                    <p>$10,000 Grand Prize</p>
+                    <p>Featured in Food & Wine Magazine</p>
+                </div>
+                <div class="competition-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Judges</h3>
+                    <p>Panel of International Curry Experts</p>
+                    <p>Celebrity Chef Specialists</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="judging-criteria">
+        <div class="competition-container">
+            <h2>Judging Criteria</h2>
+            <ul class="criteria-list">
+                <li>Authenticity and respect for traditional techniques</li>
+                <li>Innovation and creativity in presentation</li>
+                <li>Balance of flavors and spices</li>
+                <li>Technical execution and cooking methods</li>
+                <li>Overall taste and appeal</li>
+                <li>Use of local ingredients</li>
+                <li>Storytelling through the dish</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html> 

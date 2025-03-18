@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRCC2025 - Individual Evaluations</title>
+    <link rel="stylesheet" href="../css/evaluations.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Caveat&display=swap">
+    <script src="../js/header-component.js" defer></script>
+</head>
+<body>
+    <!-- Global Header Component -->
+    <header-component></header-component>
+
+    <div class="container">
+        <header>
+            <h1>RRCC2025 Individual Evaluations</h1>
+            <div class="actions">
+                <div class="search-filter">
+                    <input type="text" id="searchInput" placeholder="Search evaluations..." class="search-input">
+                    <select id="filterChef" class="filter-select">
+                        <option value="">All Chefs</option>
+                    </select>
+                    <select id="filterJudge" class="filter-select">
+                        <option value="">All Judges</option>
+                    </select>
+                    <select id="sortBy" class="filter-select">
+                        <option value="date-desc">Latest First</option>
+                        <option value="date-asc">Oldest First</option>
+                        <option value="score-desc">Highest Score</option>
+                        <option value="score-asc">Lowest Score</option>
+                    </select>
+                </div>
+                <a href="results.html" class="action-btn back">Back to Results</a>
+            </div>
+        </header>
+
+        <div class="evaluations-container">
+            <div id="evaluationsGrid" class="evaluations-grid">
+                <!-- Individual evaluation cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="../js/evaluations.js"></script>
+</body>
+</html> 

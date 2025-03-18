@@ -1,0 +1,580 @@
+/* RRCC 2024 Archive Page Styles */
+:root {
+    --primary-color: #8B0000; /* Deep burgundy */
+    --secondary-color: #E6A756; /* Gold */
+    --accent-color: #D2691E; /* Terracotta */
+    --text-color: #333;
+    --light-bg: #F9F5F0;
+    --dark-bg: #2C1A1D;
+    --header-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', sans-serif;
+    --script-font: 'Caveat', cursive;
+    --container-max-width: 1400px;
+    --container-padding: 2rem;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 2rem var(--container-padding);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 4rem;
+}
+
+section h2 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+section h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 0.5rem auto 0;
+}
+
+/* Hero Section */
+.archive-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(rgba(44, 26, 29, 0.8), rgba(44, 26, 29, 0.8)), 
+                url('https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    background-size: cover;
+    color: white;
+    border-radius: 8px;
+}
+
+.archive-hero h1 {
+    font-family: var(--header-font);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.archive-hero .tagline {
+    font-family: var(--script-font);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+/* Competition Overview */
+.competition-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.overview-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.overview-content h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.overview-content h2:after {
+    margin-left: 0;
+}
+
+.overview-content ul {
+    padding-left: 1.5rem;
+}
+
+.overview-content li {
+    margin-bottom: 0.5rem;
+}
+
+.overview-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+.stat-item {
+    text-align: center;
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: calc(50% - 0.75rem);
+    box-sizing: border-box;
+}
+
+.stat-number {
+    font-family: var(--header-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Winner Showcase */
+.winner-showcase {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+}
+
+.winner-showcase h2 {
+    color: white;
+}
+
+.winner-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.winner-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.winner-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.winner-details {
+    flex: 2;
+    min-width: 300px;
+}
+
+.winner-details h3 {
+    font-family: var(--header-font);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.winner-restaurant {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.winner-quote {
+    font-family: var(--script-font);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.winning-dish {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.winning-dish h4 {
+    font-family: var(--header-font);
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.dish-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dish-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Prize Section */
+.prize-section {
+    background-color: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.prize-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.prize-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.prize-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.prize-details {
+    flex: 2;
+    min-width: 300px;
+}
+
+.prize-details h3 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.prize-list {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.prize-list li {
+    margin-bottom: 0.8rem;
+}
+
+.prize-note {
+    font-style: italic;
+    color: #666;
+}
+
+/* Finalists Section */
+.finalists-section {
+    margin-bottom: 4rem;
+}
+
+.finalists-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.finalist-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: calc(33.333% - 1.5rem);
+    min-width: 280px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.finalist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.finalist-image {
+    margin-bottom: 1.5rem;
+}
+
+.finalist-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.finalist-card h3 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.finalist-position {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.finalist-restaurant {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.signature-dish {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* All Chefs Section */
+.all-chefs-section {
+    background-color: var(--light-bg);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+}
+
+.chefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.chef-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.chef-item:hover {
+    transform: translateY(-3px);
+}
+
+.chef-item h4 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.chef-item p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #666;
+}
+
+/* Memorable Dishes */
+.memorable-dishes {
+    margin-bottom: 4rem;
+}
+
+.dishes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.dish-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dish-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.dish-card h3 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin: 1rem 1rem 0.5rem;
+}
+
+.dish-chef {
+    font-style: italic;
+    color: #666;
+    margin: 0 1rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.dish-description {
+    margin: 0 1rem 1rem;
+    font-size: 0.95rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+    margin-bottom: 4rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.cta-section h2 {
+    color: white;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+.cta-button.primary {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+}
+
+.cta-button.primary:hover {
+    background-color: #d99b45;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid var(--secondary-color);
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(230, 167, 86, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .archive-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .archive-hero .tagline {
+        font-size: 1.4rem;
+    }
+    
+    .winner-quote {
+        font-size: 1.2rem;
+    }
+    
+    .stat-item {
+        width: 100%;
+    }
+    
+    .finalist-card {
+        width: 100%;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    section {
+        margin-bottom: 3rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .archive-hero {
+        padding: 3rem 1rem;
+    }
+    
+    section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .winner-details h3 {
+        font-size: 1.6rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+} 

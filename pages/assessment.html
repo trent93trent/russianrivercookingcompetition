@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRCC2025 - Chef Assessment</title>
+    <link rel="stylesheet" href="../css/assessment.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Caveat&display=swap">
+    <script src="../js/header-component.js" defer></script>
+</head>
+<body>
+    <!-- Global Header Component -->
+    <header-component></header-component>
+
+    <div class="container">
+        <div class="header">
+            <h1>Chef Evaluation Form</h1>
+            <a href="../index.html" class="back-btn">Back to Home</a>
+        </div>
+        <form id="judgingForm">
+            <div class="chef-selection">
+                <div id="selectedChefStatus" class="selected-chef-status">
+                    Please select a chef to evaluate
+                </div>
+                <div class="chef-grid" id="chefGrid">
+                    <!-- Chef cards will be dynamically populated -->
+                </div>
+                <input type="hidden" id="selectedChefId" name="chefId" required>
+                <input type="hidden" id="selectedChefName" name="chefName" required>
+            </div>
+
+            <div class="scoring-section">
+                <h2>Evaluation Criteria</h2>
+                
+                <div class="criteria-group">
+                    <h3>Presentation</h3>
+                    <div class="rating-scale-desc">
+                        <span>1 = Needs improvement</span>
+                        <span>10 = Exceptional artistry</span>
+                    </div>
+                    <div class="rating-container">
+                        <input type="hidden" id="presentation" name="presentation">
+                        <div class="rating-boxes" data-rating-for="presentation">
+                            <div class="rating-box" data-value="1">1</div>
+                            <div class="rating-box" data-value="2">2</div>
+                            <div class="rating-box" data-value="3">3</div>
+                            <div class="rating-box" data-value="4">4</div>
+                            <div class="rating-box" data-value="5">5</div>
+                            <div class="rating-box" data-value="6">6</div>
+                            <div class="rating-box" data-value="7">7</div>
+                            <div class="rating-box" data-value="8">8</div>
+                            <div class="rating-box" data-value="9">9</div>
+                            <div class="rating-box" data-value="10">10</div>
+                        </div>
+                    </div>
+                    <textarea name="presentationNotes" placeholder="Notes on presentation (plating, visual appeal, creativity)..."></textarea>
+                </div>
+
+                <div class="criteria-group">
+                    <h3>Taste</h3>
+                    <div class="rating-scale-desc">
+                        <span>1 = Basic flavors</span>
+                        <span>10 = Extraordinary taste profile</span>
+                    </div>
+                    <div class="rating-container">
+                        <input type="hidden" id="taste" name="taste">
+                        <div class="rating-boxes" data-rating-for="taste">
+                            <div class="rating-box" data-value="1">1</div>
+                            <div class="rating-box" data-value="2">2</div>
+                            <div class="rating-box" data-value="3">3</div>
+                            <div class="rating-box" data-value="4">4</div>
+                            <div class="rating-box" data-value="5">5</div>
+                            <div class="rating-box" data-value="6">6</div>
+                            <div class="rating-box" data-value="7">7</div>
+                            <div class="rating-box" data-value="8">8</div>
+                            <div class="rating-box" data-value="9">9</div>
+                            <div class="rating-box" data-value="10">10</div>
+                        </div>
+                    </div>
+                    <textarea name="tasteNotes" placeholder="Notes on taste (flavor balance, seasoning, complexity)..."></textarea>
+                </div>
+
+                <div class="criteria-group">
+                    <h3>Technique</h3>
+                    <div class="rating-scale-desc">
+                        <span>1 = Basic skill level</span>
+                        <span>10 = Exceptional craftsmanship</span>
+                    </div>
+                    <div class="rating-container">
+                        <input type="hidden" id="technique" name="technique">
+                        <div class="rating-boxes" data-rating-for="technique">
+                            <div class="rating-box" data-value="1">1</div>
+                            <div class="rating-box" data-value="2">2</div>
+                            <div class="rating-box" data-value="3">3</div>
+                            <div class="rating-box" data-value="4">4</div>
+                            <div class="rating-box" data-value="5">5</div>
+                            <div class="rating-box" data-value="6">6</div>
+                            <div class="rating-box" data-value="7">7</div>
+                            <div class="rating-box" data-value="8">8</div>
+                            <div class="rating-box" data-value="9">9</div>
+                            <div class="rating-box" data-value="10">10</div>
+                        </div>
+                    </div>
+                    <textarea name="techniqueNotes" placeholder="Notes on technique (cooking methods, precision, skill level)..."></textarea>
+                </div>
+
+                <div class="criteria-group">
+                    <h3>Creativity</h3>
+                    <div class="rating-scale-desc">
+                        <span>1 = Conventional approach</span>
+                        <span>10 = Innovative brilliance</span>
+                    </div>
+                    <div class="rating-container">
+                        <input type="hidden" id="creativity" name="creativity">
+                        <div class="rating-boxes" data-rating-for="creativity">
+                            <div class="rating-box" data-value="1">1</div>
+                            <div class="rating-box" data-value="2">2</div>
+                            <div class="rating-box" data-value="3">3</div>
+                            <div class="rating-box" data-value="4">4</div>
+                            <div class="rating-box" data-value="5">5</div>
+                            <div class="rating-box" data-value="6">6</div>
+                            <div class="rating-box" data-value="7">7</div>
+                            <div class="rating-box" data-value="8">8</div>
+                            <div class="rating-box" data-value="9">9</div>
+                            <div class="rating-box" data-value="10">10</div>
+                        </div>
+                    </div>
+                    <textarea name="creativityNotes" placeholder="Notes on creativity (originality, innovation, unique combinations)..."></textarea>
+                </div>
+
+                <div class="criteria-group golden-spoon-section">
+                    <h3>Culinary Excellence Award</h3>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="goldenSpoon" name="goldenSpoon">
+                        <label for="goldenSpoon">This chef deserves the Culinary Excellence Award for exceptional achievement</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-score">
+                <h2>Final Score: <span id="totalScore">0</span>/40</h2>
+            </div>
+
+            <div class="additional-notes">
+                <h2>Additional Comments</h2>
+                <textarea name="additionalNotes" placeholder="Additional comments about the dish, overall impression, or suggestions for improvement..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Evaluation</button>
+        </form>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html> 

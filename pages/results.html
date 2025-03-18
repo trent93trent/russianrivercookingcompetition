@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRCC2025 - Evaluation Results</title>
+    <link rel="stylesheet" href="../css/results.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Caveat&display=swap">
+    <script src="../js/header-component.js" defer></script>
+</head>
+<body>
+    <!-- Global Header Component -->
+    <header-component></header-component>
+
+    <div class="container">
+        <header>
+            <h1>RRCC2025 Evaluation Results</h1>
+            <div class="actions">
+                <a href="evaluations.html" class="action-btn">View Individual Evaluations</a>
+                <button id="clearBtn" class="action-btn warning">Clear All Results</button>
+                <a href="../index.html" class="action-btn back">Back to Main Menu</a>
+            </div>
+        </header>
+
+        <div class="chef-summaries" id="chefSummaries">
+            <h2>Chef Performance Summary</h2>
+            <div class="chef-cards" id="chefCards">
+                <!-- Chef summary cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="../js/results.js"></script>
+</body>
+</html> 
