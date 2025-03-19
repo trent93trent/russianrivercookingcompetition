@@ -186,7 +186,7 @@ class HeaderComponent extends HTMLElement {
     if (evaluationPortalLink && portalAccessModal) {
       evaluationPortalLink.addEventListener('click', (e) => {
         e.preventDefault();
-        portalAccessModal.style.display = 'block';
+        portalAccessModal.classList.add('active');
         this.querySelector('#portalPassword').focus();
       });
     }
@@ -195,18 +195,18 @@ class HeaderComponent extends HTMLElement {
     const closeButtons = this.querySelectorAll('.close-modal');
     closeButtons.forEach(button => {
       button.addEventListener('click', () => {
-        portalAccessModal.style.display = 'none';
-        portalOptionsModal.style.display = 'none';
+        portalAccessModal.classList.remove('active');
+        portalOptionsModal.classList.remove('active');
       });
     });
     
     // Close modals when clicking outside
     window.addEventListener('click', (event) => {
       if (event.target === portalAccessModal) {
-        portalAccessModal.style.display = 'none';
+        portalAccessModal.classList.remove('active');
       }
       if (event.target === portalOptionsModal) {
-        portalOptionsModal.style.display = 'none';
+        portalOptionsModal.classList.remove('active');
       }
     });
     
@@ -218,8 +218,8 @@ class HeaderComponent extends HTMLElement {
         const errorElement = this.querySelector('#passwordError');
         
         if (password === 'casatranquilo') {
-          portalAccessModal.style.display = 'none';
-          portalOptionsModal.style.display = 'block';
+          portalAccessModal.classList.remove('active');
+          portalOptionsModal.classList.add('active');
           this.querySelector('#judgeName').focus();
           errorElement.textContent = '';
         } else {
