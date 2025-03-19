@@ -208,104 +208,121 @@
     position: relative;
 }
 
-.modal h2 {
-    margin-top: 0;
-    color: var(--primary-color);
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 0.75rem 0;
-    font-size: 1rem;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    background: transparent;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.input-group label {
+.close-modal {
     position: absolute;
-    top: 0.75rem;
-    left: 0;
-    font-size: 1rem;
-    color: #999;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.input-group input:focus,
-.input-group input:valid {
-    border-bottom-color: var(--primary-color);
-}
-
-.input-group input:focus + label,
-.input-group input:valid + label {
-    top: -0.5rem;
-    font-size: 0.75rem;
-    color: var(--primary-color);
-}
-
-.input-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s;
-}
-
-.input-group input:focus ~ .input-line {
-    width: 100%;
-}
-
-.modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.modal-btn {
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: var(--border-radius);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.modal-btn.cancel {
-    background-color: #f1f1f1;
     color: #666;
 }
 
-.modal-btn.confirm {
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.portal-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.portal-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portal-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.option-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.option-text h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.option-text p {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.judge-name-container {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.judge-name-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.judge-name-container input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+}
+
+.judge-name-container button {
+    width: 100%;
+    padding: 0.75rem;
     background-color: var(--primary-color);
     color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.modal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.judge-name-container button:hover {
+    background-color: #6b1b1b;
 }
 
-.modal-btn.cancel:hover {
-    background-color: #e5e5e5;
+#portalPassword {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
 }
 
-.modal-btn.confirm:hover {
-    background-color: #7a1e1e;
+#submitPassword {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#submitPassword:hover {
+    background-color: #6b1b1b;
 }
 
 @keyframes fadeIn {
